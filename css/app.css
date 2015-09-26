@@ -126,14 +126,11 @@ a:hover {
 #android {
   overflow: hidden;
 }
-#android .android-robot-wrapper {
+#android img.android-robot {
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translate(50%, 50%);
-}
-#android .android-robot-wrapper img {
-  transform: rotate(-45deg);
+  transform: translate(50%, 50%) rotate(-45deg);
 }
 
 /** Slider **/

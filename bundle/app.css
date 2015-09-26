@@ -422,7 +422,7 @@ td,
 th {
   padding: 0;
 }
-div, span {
+body, div, span {
   box-sizing: border-box;
   position: relative;
 
@@ -491,13 +491,9 @@ a:hover {
   text-decoration: none;
 }
 
-section {
+.section {
   height: 100%;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -511,9 +507,12 @@ section {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 
-section.logo-section nav {
+.section.logo nav {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -527,16 +526,16 @@ section.logo-section nav {
       -ms-flex-pack: center;
           justify-content: center;
 }
-section.logo-section nav a {
+.section.logo nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-section.logo-section nav a:hover {
+.section.logo nav a:hover {
   text-decoration: underline;
 }
 
-section#native,
-section#touch {
+#native,
+#touch {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;

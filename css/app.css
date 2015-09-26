@@ -1,5 +1,5 @@
 @import "normalize.css";
-div, span {
+body, div, span {
   box-sizing: border-box;
   position: relative;
 
@@ -51,30 +51,30 @@ a:hover {
   text-decoration: none;
 }
 
-section {
+.section {
   height: 100%;
   width: 100%;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-basis: 100%;
 }
 
-section.logo-section nav {
+.section.logo nav {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-section.logo-section nav a {
+.section.logo nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-section.logo-section nav a:hover {
+.section.logo nav a:hover {
   text-decoration: underline;
 }
 
-section#native,
-section#touch {
+#native,
+#touch {
   flex-direction: row;
 }
 .iphone-demo {

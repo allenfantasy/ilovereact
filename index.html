@@ -20,7 +20,7 @@
   </head>
   <body>
 
-    <div class="section intro">
+    <div class="section" id="intro">
       <img class="react-logo" src="img/react-logo.svg" alt="">
       <h1>Build Native Apps With React</h1>
       <nav>
@@ -72,18 +72,22 @@
     </div>
 
     <div id="slider-control">
-      <a href="#native" class="active">
+      <a href="#intro" class="active">
+        <div class="dot"></div>
+      </a>
+      <a href="#native">
         <div class="dot"></div>
       </a>
       <a href="#touch">
         <div class="dot"></div>
       </a>
-      <a href="#async">
-        <div class="dot"></div>
-      </a>
-      <a href="#flex">
+      <a href="#android">
         <div class="dot"></div>
       </a>
     </div>
+
+    <script type="text/javascript" src="node_modules/gsap/src/uncompressed/TweenMax.js"></script>
+    <script type="text/javascript" src="node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
   </body>
 </html>

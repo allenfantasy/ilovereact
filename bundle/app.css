@@ -512,19 +512,53 @@ a:hover {
           flex-basis: 100%;
 }
 
-.section.intro {
+.section#intro {
   text-align: center;
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
 }
-.section.intro img,
-.section.intro h1,
-.section.intro nav {
+.section#intro img,
+.section#intro h1,
+.section#intro nav {
   z-index: 1;
 }
 
-.section.intro nav {
+@-webkit-keyframes float {
+  from {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+  50% {
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
+  }
+  to {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+}
+
+@keyframes float {
+  from {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+  50% {
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
+  }
+  to {
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
+  }
+}
+.section#intro img {
+  -webkit-animation: float infinite linear 4s;
+          animation: float infinite linear 4s;
+}
+
+.section#intro nav {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,14 +572,14 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.section.intro nav a {
+.section#intro nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-.section.intro nav a:hover {
+.section#intro nav a:hover {
   text-decoration: underline;
 }
-.section.intro .overlay {
+.section#intro .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -617,6 +651,52 @@ a:hover {
   padding-right: 50px;
 }
 
+@-webkit-keyframes shake {
+  from {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+  25% {
+    -webkit-transform: translate(50%, 50%) rotate(-30deg);
+            transform: translate(50%, 50%) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translate(50%, 50%) rotate(-60deg);
+            transform: translate(50%, 50%) rotate(-60deg);
+  }
+  75% {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+  to {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+}
+
+@keyframes shake {
+  from {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+  25% {
+    -webkit-transform: translate(50%, 50%) rotate(-30deg);
+            transform: translate(50%, 50%) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translate(50%, 50%) rotate(-60deg);
+            transform: translate(50%, 50%) rotate(-60deg);
+  }
+  75% {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+  to {
+    -webkit-transform: translate(50%, 50%) rotate(-45deg);
+            transform: translate(50%, 50%) rotate(-45deg);
+  }
+}
+
 #android {
   overflow: hidden;
 }
@@ -627,6 +707,8 @@ a:hover {
   -webkit-transform: translate(50%, 50%) rotate(-45deg);
       -ms-transform: translate(50%, 50%) rotate(-45deg);
           transform: translate(50%, 50%) rotate(-45deg);
+  -webkit-animation: shake infinite linear 1s;
+          animation: shake infinite linear 1s;
 }
 
 /** Slider **/

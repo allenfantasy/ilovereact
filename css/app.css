@@ -60,31 +60,46 @@ a:hover {
   flex-basis: 100%;
 }
 
-.section.intro {
+.section#intro {
   text-align: center;
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
 }
-.section.intro img,
-.section.intro h1,
-.section.intro nav {
+.section#intro img,
+.section#intro h1,
+.section#intro nav {
   z-index: 1;
 }
 
-.section.intro nav {
+@keyframes float {
+  from {
+    transform: translate(0, -20px);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  to {
+    transform: translate(0, -20px);
+  }
+}
+.section#intro img {
+  animation: float infinite linear 4s;
+}
+
+.section#intro nav {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.section.intro nav a {
+.section#intro nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-.section.intro nav a:hover {
+.section#intro nav a:hover {
   text-decoration: underline;
 }
-.section.intro .overlay {
+.section#intro .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -123,6 +138,24 @@ a:hover {
   padding-right: 50px;
 }
 
+@keyframes shake {
+  from {
+    transform: translate(50%, 50%) rotate(-45deg);
+  }
+  25% {
+    transform: translate(50%, 50%) rotate(-30deg);
+  }
+  50% {
+    transform: translate(50%, 50%) rotate(-60deg);
+  }
+  75% {
+    transform: translate(50%, 50%) rotate(-45deg);
+  }
+  to {
+    transform: translate(50%, 50%) rotate(-45deg);
+  }
+}
+
 #android {
   overflow: hidden;
 }
@@ -131,6 +164,7 @@ a:hover {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%) rotate(-45deg);
+  animation: shake infinite linear 1s;
 }
 
 /** Slider **/

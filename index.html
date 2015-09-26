@@ -20,7 +20,7 @@
   </head>
   <body>
 
-    <div class="section logo">
+    <div class="section intro">
       <img class="react-logo" src="img/react-logo.svg" alt="">
       <h1>Build Native Apps With React</h1>
       <nav>
@@ -37,10 +37,12 @@
           Flex &amp; Styling
         </a>
       </nav>
+      <div class="overlay"></div>
     </div>
 
     <div class="section" id="native">
       <div class="iphone-demo">
+        <img class="embed" src="img/tumblr-demo.jpg" alt="">
         <img src="img/iphone-frame.svg" alt="">
       </div>
       <div class="feature-description">
@@ -53,6 +55,7 @@
 
     <div class="section" id="touch">
       <div class="iphone-demo">
+        <img class="embed" src="img/swype-demo.jpg" alt="">
         <img src="img/iphone-frame.svg" alt="">
       </div>
       <div class="feature-description">
@@ -63,9 +66,26 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="android">
       <h1>Android Is Here</h1>
+      <div class="android-robot-wrapper">
+        <img src="img/android-robot.svg" alt="">
+      </div>
     </div>
 
+    <div id="slider-control">
+      <a href="#native" class="active">
+        <div class="dot"></div>
+      </a>
+      <a href="#touch">
+        <div class="dot"></div>
+      </a>
+      <a href="#async">
+        <div class="dot"></div>
+      </a>
+      <a href="#flex">
+        <div class="dot"></div>
+      </a>
+    </div>
   </body>
 </html>

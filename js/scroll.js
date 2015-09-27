@@ -49,6 +49,31 @@ function addSmoothScrolling() {
   }
 }
 
+function addScrollMagic() {
+    var controller = new ScrollMagic.Controller(); 
+
+    var fade = new ScrollMagic.Scene({
+      triggerElement: "#native",
+      duration: "100%",
+      triggerHook: 'onEnter'
+    }).addTo(controller)
+      .setTween('#intro .background', { opacity: '0' });
+
+    var moveIPhone = new ScrollMagic.Scene({
+      triggerElement: "#native",
+      duration: "100%",
+      triggerHook: 'onEnter'
+    }).addTo(controller)
+      .setTween('#iphone-overlay', { width: '50%', y: 0 });
+
+    var pinIPhone = new ScrollMagic.Scene({
+      triggerElement: "#native",
+      duration: "100%",
+      triggerHook: 'onLeave'
+    }).addTo(controller)
+      .setPin('#iphone-overlay');
+}
+
 // Use the onscroll callback to update slider
 window.onscroll = function() {
   updateSliderControl();
@@ -58,5 +83,6 @@ window.onscroll = function() {
 window.onload = function() {
   updateSliderControl();
   addSmoothScrolling();
+  addScrollMagic();
 }
 

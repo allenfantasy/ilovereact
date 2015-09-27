@@ -512,15 +512,22 @@ a:hover {
           flex-basis: 100%;
 }
 
-.section#intro {
+#intro {
   text-align: center;
+}
+#intro .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
 }
-.section#intro img,
-.section#intro h1,
-.section#intro nav {
+#intro img,
+#intro h1,
+#intro nav {
   z-index: 1;
 }
 
@@ -553,12 +560,12 @@ a:hover {
             transform: translate(0, -20px);
   }
 }
-.section#intro img {
+#intro img {
   -webkit-animation: float infinite linear 4s;
           animation: float infinite linear 4s;
 }
 
-.section#intro nav {
+#intro nav {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -572,21 +579,50 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.section#intro nav a {
+#intro nav a {
   margin: 0 10px;
   text-decoration: none;
 }
-.section#intro nav a:hover {
+#intro nav a:hover {
   text-decoration: underline;
 }
-.section#intro .overlay {
+#intro .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  /*background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));*/
   background-image: -webkit-linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
   background-image: linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+}
+
+#iphone-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(255,0,0,0.3);*/
+  
+  -webkit-transition: -webkit-transform linear;
+  
+          transition: transform linear;
+  -webkit-transform: translate(0, -20%);
+      -ms-transform: translate(0, -20%);
+          transform: translate(0, -20%);
+}
+
+@media all and (max-height: 700px) {
+  .react-logo {
+    height: 150px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  #iphone-overlay {
+    -webkit-transform: translate(0, -15%);
+        -ms-transform: translate(0, -15%);
+            transform: translate(0, -15%);
+  }
 }
 
 #native,
@@ -597,23 +633,21 @@ a:hover {
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
 .iphone-demo {
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-flex: 1 0;
+      -ms-flex: 1 0;
+          flex: 1 0;
   -webkit-align-self: stretch;
       -ms-flex-item-align: stretch;
           align-self: stretch;
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; 
 
-  -webkit-box-align: center; 
+  -webkit-box-align: center;
 
-  -webkit-align-items: center; 
+  -webkit-align-items: center;
 
-      -ms-flex-align: center; 
+      -ms-flex-align: center;
 
           align-items: center;
   -webkit-box-pack: center;
@@ -634,21 +668,14 @@ a:hover {
           transform: translate(-50%, -50%); 
 } 
 .feature-description {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-          align-self: stretch;
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; 
-  -webkit-box-pack: center; 
-  -webkit-justify-content: center; 
-      -ms-flex-pack: center; 
-          justify-content: center;
-  padding-right: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%); 
+  padding-right: 100px;
 }
 
 @-webkit-keyframes shake {
